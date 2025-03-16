@@ -1,26 +1,17 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const dotenv = require('dotenv');
-const cors = require('cors');
-const authRoutes = require('./routes/authRoutes');
-const connectDB = require('./config/db');
+import express from "express";
+import cors from "cors";
+import dotenv from "dotenv";
+import connectDB from "./config/db.js";
+import authRoutes from "./routes/authRoutes.js";
 
-dotenv.config(); // Load environment variables
-
-const app = express();
-
-// Middleware
-app.use(express.json()); // Parse incoming JSON requests
-app.use(cors()); // Enable Cross-Origin Requests
-
-// Connect to MongoDB
+dotenv.config();
 connectDB();
 
-// Use Routes
-app.use('/api/auth', authRoutes);
+const app = express();
+app.use(express.json());
+app.use(cors());
 
-// Start the Server
+app.use("/api/auth", authRoutes);
+
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
