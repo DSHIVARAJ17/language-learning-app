@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "../styles/LanguageSelection.css"; // Import CSS
 
 const LanguageSelection = () => {
   const navigate = useNavigate();
@@ -20,27 +21,21 @@ const LanguageSelection = () => {
   };
 
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <h2>Language Selection</h2>
-      <p style={{ color: "red", fontWeight: "bold" }}>Now only Japanese is available.</p>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "10px", maxWidth: "600px", margin: "auto" }}>
+    <div className="language-selection-container">
+      <h2 className="language-selection-heading">Language Selection</h2>
+      <p className="language-availability-message">Now only Japanese is available.</p>
+      <div className="language-grid">
         {languages.map((language) => (
           <button
             key={language}
             onClick={() => handleLanguageClick(language)}
-            style={{
-              padding: "10px",
-              border: "1px solid black",
-              borderRadius: "5px",
-              cursor: "pointer",
-              backgroundColor: language === "Japanese" ? "#4CAF50" : "#ddd",
-            }}
+            className={`language-button ${language === "Japanese" ? "available" : ""}`}
           >
             {language}
           </button>
         ))}
       </div>
-      {message && <p style={{ color: "red", marginTop: "20px" }}>{message}</p>}
+      {message && <p className="language-popup-message">{message}</p>}
     </div>
   );
 };
