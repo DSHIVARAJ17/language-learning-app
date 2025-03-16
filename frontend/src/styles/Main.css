@@ -1,0 +1,47 @@
+/* Full Page Centering */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #f4f4f4;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  
+  /* Title Styling */
+  .main-heading {
+    font-size: 28px;
+    color: black;
+    margin-bottom: 20px;
+  }
+  
+  /* Paragraph Styling */
+  .main-text {
+    max-width: 600px;
+    text-align: justify;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  /* Button Styling */
+  .get-started-btn {
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    transition: 0.3s;
+  }
+  
+  .get-started-btn:hover {
+    background-color: #388E3C;
+  }
+  

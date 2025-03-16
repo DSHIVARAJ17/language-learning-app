@@ -1,19 +1,24 @@
 import { Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";  // Import Navbar
+import Main from "./pages/Main";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
+import LanguageSelection from "./pages/LanguageSelection";
+import Japanese from "./pages/Japanese";
+import Navbar from "./components/Navbar";
 
-function App() {
+const App = () => {
   return (
-    <div>
-      <Navbar /> {/* Add Navbar Here */}
+    <>
+      <Navbar />
       <Routes>
-        <Route path="/" element={<h2>Home Page</h2>} />
+        <Route path="/" element={<Main />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/language-selection" element={<LanguageSelection />} />
+        <Route path="/japanese" element={<Japanese />} />
       </Routes>
-    </div>
+    </>
   );
-}
+};
 
 export default App;

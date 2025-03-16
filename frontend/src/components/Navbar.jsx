@@ -1,16 +1,16 @@
 import { Link } from "react-router-dom";
+import "./Navbar.css"; // Ensure correct path
 
-function Navbar() {
+const Navbar = () => {
   return (
-    <nav>
-      <h2>Language Learning App</h2>
-      <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/signup">Signup</Link></li>
-        <li><Link to="/login">Login</Link></li>
-      </ul>
+    <nav className="navbar">
+      <Link to="/">Home</Link>
+      <Link to="/signup">Sign Up</Link>
+      <Link to="/login">Login</Link>
+      <Link to="/language-selection">Languages</Link>
+      <Link to="/japanese">Japanese</Link>
     </nav>
   );
-}
+};
 
 export default Navbar;
