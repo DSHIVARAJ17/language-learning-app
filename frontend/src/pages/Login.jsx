@@ -17,7 +17,7 @@ const Login = () => {
     try {
       console.log("Sending request:", JSON.stringify(user));
 
-      const response = await fetch("http://localhost:5000/api/auth/login", {
+      const response = await fetch("https://language-learning-app-5hrf.onrender.com/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(user),
