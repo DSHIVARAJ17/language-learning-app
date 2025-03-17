@@ -13,16 +13,16 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     try {
-      const response = await fetch("https://language-learning-app-5hrf.onrender.com/signup", {
+      const response = await fetch("https://language-learning-app-5hrf.onrender.com/api/auth/signup", { // Updated URL
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(user),
       });
-
+  
       const data = await response.json();
-
+  
       if (data.success) {
         navigate("/language-selection");
       } else {
@@ -33,6 +33,7 @@ const Signup = () => {
       setMessage("Something went wrong. Please try again.");
     }
   };
+  
 
   return (
     <div className="signup-container">

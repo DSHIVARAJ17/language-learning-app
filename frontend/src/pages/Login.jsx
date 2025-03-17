@@ -12,21 +12,22 @@ const Login = () => {
   };
 
   const handleSubmit = async (e) => {
+    
     e.preventDefault();
-
+  
     try {
       console.log("Sending request:", JSON.stringify(user));
-
-      const response = await fetch("https://language-learning-app-5hrf.onrender.com/login", {
+  
+      const response = await fetch("https://language-learning-app-5hrf.onrender.com/api/auth/login", { // Updated URL
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(user),
       });
-
+  
       const data = await response.json();
       console.log("Response Status:", response.status);
       console.log("Response Data:", data);
-
+  
       if (response.ok) {
         navigate("/language-selection");
       } else {
@@ -37,6 +38,7 @@ const Login = () => {
       setMessage("Something went wrong. Please try again.");
     }
   };
+  
 
   return (
     <div className="login-container">
